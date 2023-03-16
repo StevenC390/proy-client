@@ -1,4 +1,33 @@
-import logo from './logo.svg';
+/*rafce */
+import React from 'react';
+import allRoutesProject from './config/routes';
+import { BrowserRouter,Routes,Route } from './pages/NotFound';
+
+
+const App = () => {
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route>
+      {allRoutesProject.map((route,index)=>{
+        <Route 
+        key= {index} 
+        path = {route.path} 
+        element={
+        <route.Layout>
+          <route.component/>
+        </route.Layout>}></Route>
+      })}
+      </Route>
+    </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+
+/*import logo from './logo.svg';
 import './App.scss';
 import { Alert } from 'antd';
 import { Card } from 'antd';
@@ -32,4 +61,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
